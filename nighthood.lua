@@ -833,11 +833,6 @@ GUI:Credit{
 
 -- antiafk
 
-while true do
-	local VirtualUser = game:GetService('VirtualUser')
-	game:GetService('Players').LocalPlayer.Idled:connect(function()
-		VirtualUser:CaptureController()
-		VirtualUser:ClickButton2(Vector2.new())
-		end)
-	wait()
-	end
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
